@@ -1520,6 +1520,9 @@ body {
 
 /* at 425px */
 @media (max-width: 425px) {
+  .logo-placeholder img {
+    width: 120px;
+  }
   .about-h1 {
     margin-bottom: 30px;
   }
@@ -1558,8 +1561,8 @@ body {
   }
 
   .pickup-image-placeholder img {
-    width: 350px;
-    height: 300px;
+    width: 320px;
+    height: 270px;
   }
   .school-list li {
     font-size: 14px;
@@ -1578,8 +1581,8 @@ body {
     min-height: 90vh;
   }
   .flexible-image-placeholder img {
-    width: 350px;
-    height: 300px;
+    width: 320px;
+    height: 270px;
   }
   .testimonial-container {
     max-width: 900px;
