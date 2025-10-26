@@ -1529,7 +1529,7 @@ body {
     line-height: 1.2;
   }
   .about-text p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     /* margin-bottom: ; */
   }
@@ -1550,7 +1550,7 @@ body {
     font-size: 28px;
   }
   .cta-text p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
   }
   .cta-images {
@@ -1562,13 +1562,20 @@ body {
     height: 300px;
   }
   .school-list li {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
     padding-left: 30px;
     line-height: 1.6;
   }
   .flexible-text p {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .testimonial-text {
+    font-size: 14px;
+  }
+
+  .hero-container {
+    min-height: 90vh;
   }
   .flexible-image-placeholder img {
     width: 350px;
@@ -1818,7 +1825,7 @@ body {
 /* 375px */
 @media (max-width: 375px) {
   .logo-placeholder img {
-    width: 130px;
+    width: 110px;
   }
   .description {
     font-size: 17px;
@@ -1845,11 +1852,11 @@ body {
     font-size: 15px;
   }
   .flexible-image-placeholder img {
-    width: 300px;
+    width: 280px;
     height: 270px;
   }
   .pickup-image-placeholder img {
-    width: 300px;
+    width: 280px;
     height: 270px;
   }
   .cta-image-placeholder img {
