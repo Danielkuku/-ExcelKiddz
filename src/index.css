@@ -1905,35 +1905,35 @@ body {
     padding: 30px 20px;
   }
   .numbered-item p {
-    font-size: 15px;
+    font-size: 14px;
   }
   .lettered-list li {
-    font-size: 14px;
+    font-size: 13px;
   }
   .privacy-intro p {
-    font-size: 15px;
+    font-size: 14px;
   }
   .definitions-table td {
-    font-size: 14px;
+    font-size: 13px;
     padding: 15px 10px;
   }
   .bullet-list li {
-    font-size: 14px;
+    font-size: 13px;
   }
   .section-heading {
     font-size: 23px;
   }
   .indent-text {
-    font-size: 14px;
+    font-size: 13px;
   }
   .numbered-sublist li {
-    font-size: 14px;
+    font-size: 13px;
   }
   .index-info {
-    font-size: 14px;
+    font-size: 13px;
   }
   .sub-list li {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -1964,11 +1964,9 @@ body {
   .testimonial-container {
     gap: 0px;
   }
-  .footer-tagline {
-    font-size: 13px;
-  }
+
   .footer-column h3 {
-    font-size: 15px;
+    font-size: 14px;
   }
   .flexible-image-placeholder img {
     width: 280px;
@@ -2014,7 +2012,7 @@ body {
     padding: 15px 5px;
   }
   .numbered-item p {
-    font-size: 14px;
+    font-size: 13px;
   }
   .pickup-text h2,
   .flexible-text h2 {
@@ -2026,6 +2024,12 @@ body {
   .testimonials-title,
   .team-title {
     font-size: 25px;
+  }
+  .footer-tagline {
+    font-size: 13px;
+  }
+  .footer-links a {
+    font-size: 13px;
   }
 }
 

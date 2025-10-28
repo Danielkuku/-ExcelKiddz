@@ -1,0 +1,6 @@
+@media (max-width: 375px) {
+  .footer-tagline {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
