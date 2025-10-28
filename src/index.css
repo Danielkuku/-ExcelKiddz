@@ -1079,6 +1079,8 @@ body {
 }
 
 .form-left {
+  width: 100%;
+  max-width: 100%;
   color: #6a1b9a;
 }
 
@@ -1249,15 +1251,166 @@ body {
   line-height: 1.6;
 }
 
+/* Terms styles */
+
+.privacy-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 80px;
+}
+
+.privacy-intro {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.privacy-intro p {
+  margin-bottom: 20px;
+}
+
+.bold-text {
+  font-weight: 600;
+  color: #555;
+}
+
+.numbered-item {
+  margin-bottom: 20px;
+}
+
+.definitions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 40px 0;
+  border: 1px solid #ddd;
+}
+
+.definitions-table tr {
+  transition: background-color 0.2s;
+}
+
+.definitions-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.definitions-table td {
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.definitions-table td:first-child {
+  font-weight: 600;
+  color: #555;
+  width: 250px;
+}
+
+.sub-list {
+  list-style: none;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.sub-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.sub-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  background: #666;
+  border-radius: 50%;
+}
+
+.section-heading {
+  font-size: 36px;
+  color: #666;
+  font-weight: 600;
+  margin: 40px 0 25px 0;
+}
+
+.bullet-list {
+  list-style: none;
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #666;
+  font-weight: bold;
+}
+
+.lettered-list {
+  list-style: none;
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.lettered-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 0;
+}
+
+.indent-text {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.numbered-sublist {
+  list-style: none;
+  margin: 15px 0;
+  padding-left: 40px;
+}
+
+.numbered-sublist li {
+  margin-bottom: 10px;
+}
+
+.index-info {
+  font-style: italic;
+  font-weight: bold;
+  color: purple; /* deep purple for a professional look */
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+.contact-tel {
+  color: inherit; /* keeps your existing text color */
+  text-decoration: none; /* removes underline */
+  font-weight: bold; /* makes it stand out */
+  transition: color 0.3s ease;
+}
+
+.contact-tel:hover {
+  color: #8b5cf6;
+}
+
 @media (max-width: 1024px) {
   .form-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     padding: 50px;
   }
 
   .info-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
   }
 
@@ -1490,16 +1643,33 @@ body {
   }
   .form-container {
     padding: 40px 30px;
+    grid-template-columns: 1fr;
   }
-
+  .form-input,
+  .form-textarea {
+    width: 500px;
+  }
   .form-heading {
     font-size: 36px;
+    margin-bottom: 20px;
   }
-
+  .submit-button {
+    margin: 0;
+    margin-left: 10rem;
+  }
+  .info-icon {
+    width: 60px;
+    height: 60px;
+  }
   .info-heading {
     font-size: 36px;
   }
-
+  .info-card h3 {
+    font-size: 15px;
+  }
+  .info-card p {
+    font-size: 14px;
+  }
   .contact-title {
     font-size: 48px;
     left: 30px;
@@ -1520,6 +1690,9 @@ body {
 
 /* at 425px */
 @media (max-width: 425px) {
+  .hero-content {
+    padding: 20px 20px;
+  }
   .logo-placeholder img {
     width: 120px;
   }
@@ -1672,161 +1845,104 @@ body {
   .member-name {
     font-size: 18px;
   }
-}
-
-/* Terms styles */
-
-.privacy-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 60px 80px;
-}
-
-.privacy-intro {
-  margin-top: 100px;
-  margin-bottom: 30px;
-  font-size: 15px;
-}
-
-.privacy-intro p {
-  margin-bottom: 20px;
-}
-
-.bold-text {
-  font-weight: 600;
-  color: #555;
-}
-
-.numbered-item {
-  margin-bottom: 20px;
-}
-
-.definitions-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0 40px 0;
-  border: 1px solid #ddd;
-}
-
-.definitions-table tr {
-  transition: background-color 0.2s;
-}
-
-.definitions-table tr:hover {
-  background-color: #f5f5f5;
-}
-
-.definitions-table td {
-  padding: 15px 20px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-  vertical-align: top;
-}
-
-.definitions-table td:first-child {
-  font-weight: 600;
-  color: #555;
-  width: 250px;
-}
-
-.sub-list {
-  list-style: none;
-  padding-left: 30px;
-  margin-top: 10px;
-}
-
-.sub-list li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 15px;
-}
-
-.sub-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 5px;
-  height: 5px;
-  background: #666;
-  border-radius: 50%;
-}
-
-.section-heading {
-  font-size: 36px;
-  color: #666;
-  font-weight: 600;
-  margin: 40px 0 25px 0;
-}
-
-.bullet-list {
-  list-style: none;
-  margin: 15px 0;
-  padding-left: 20px;
-}
-
-.bullet-list li {
-  position: relative;
-  padding-left: 15px;
-  margin-bottom: 10px;
-}
-
-.bullet-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #666;
-  font-weight: bold;
-}
-
-.lettered-list {
-  list-style: none;
-  margin: 15px 0;
-  padding-left: 20px;
-}
-
-.lettered-list li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 0;
-}
-
-.indent-text {
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
-.numbered-sublist {
-  list-style: none;
-  margin: 15px 0;
-  padding-left: 40px;
-}
-
-.numbered-sublist li {
-  margin-bottom: 10px;
-}
-
-.index-info {
-  font-style: italic;
-  font-weight: bold;
-  color: purple; /* deep purple for a professional look */
-  font-size: 16px;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-.contact-tel {
-  color: inherit; /* keeps your existing text color */
-  text-decoration: none; /* removes underline */
-  font-weight: bold; /* makes it stand out */
-  transition: color 0.3s ease;
-}
-
-.contact-tel:hover {
-  color: #8b5cf6;
+  .form-container {
+    padding: 30px 15px;
+  }
+  .contact-form-section,
+  .contact-info-section {
+    padding: 35px 15px;
+  }
+  .form-heading {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .form-left {
+    width: 370px;
+  }
+  .form-description {
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .contact-icon {
+    font-size: 18px;
+  }
+  .contact-detail {
+    font-size: 15px;
+  }
+  .form-input,
+  .form-textarea {
+    width: 350px;
+  }
+  .submit-button {
+    margin: 0;
+    margin-left: 8rem;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+  .form-label {
+    font-size: 14px;
+  }
+  .contact-hero .hero-placeholder img {
+    padding-top: 80px;
+    height: 300px;
+  }
+  .info-heading {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+  .info-icon {
+    font-size: 23px;
+    width: 40px;
+    height: 40px;
+  }
+  .info-grid {
+    gap: 10px;
+  }
+  .privacy-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  .numbered-item p {
+    font-size: 15px;
+  }
+  .lettered-list li {
+    font-size: 14px;
+  }
+  .privacy-intro p {
+    font-size: 15px;
+  }
+  .definitions-table td {
+    font-size: 14px;
+    padding: 15px 10px;
+  }
+  .bullet-list li {
+    font-size: 14px;
+  }
+  .section-heading {
+    font-size: 23px;
+  }
+  .indent-text {
+    font-size: 14px;
+  }
+  .numbered-sublist li {
+    font-size: 14px;
+  }
+  .index-info {
+    font-size: 14px;
+  }
+  .sub-list li {
+    font-size: 14px;
+  }
 }
 
 /* 375px */
 @media (max-width: 375px) {
+  .hero-content {
+    padding: 20px 20px;
+  }
+
   .logo-placeholder img {
     width: 110px;
   }
@@ -1868,6 +1984,37 @@ body {
   .about-image img {
     width: 300px;
     height: 270px;
+  }
+  .form-heading {
+    font-size: 18px;
+  }
+  .form-description {
+    width: 350px;
+  }
+  .contact-detail {
+    width: 350px;
+    word-wrap: break-word;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  .form-input,
+  .form-textarea {
+    width: 300px;
+  }
+  .submit-button {
+    margin: 0;
+    margin-left: 6.5rem;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .info-card p {
+    font-size: 13px;
+  }
+  .definitions-table td {
+    padding: 15px 5px;
+  }
+  .numbered-item p {
+    font-size: 14px;
   }
 }
 
