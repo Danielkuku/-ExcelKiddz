@@ -2016,6 +2016,17 @@ body {
   .numbered-item p {
     font-size: 14px;
   }
+  .pickup-text h2,
+  .flexible-text h2 {
+    font-size: 25px;
+  }
+  .cta-text h2 {
+    font-size: 25px;
+  }
+  .testimonials-title,
+  .team-title {
+    font-size: 25px;
+  }
 }
 
 /* Mobile menu icon */
