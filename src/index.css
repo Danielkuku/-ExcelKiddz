@@ -1048,7 +1048,7 @@ body {
   height: 500px; /* or use 40vh for a responsive short hero */
   object-fit: cover;
   display: block;
-  padding-top: 100px; /* add space for fixed navbar */
+  margin-top: 100px;
 }
 
 .contact-title {
@@ -1563,8 +1563,8 @@ body {
     width: 70%;
     background: white;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     gap: 30px;
     transition: right 0.4s ease-in-out;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
@@ -1691,7 +1691,7 @@ body {
 /* at 425px */
 @media (max-width: 425px) {
   .hero-content {
-    padding: 20px 20px;
+    padding: 20px 10px;
   }
   .logo-placeholder img {
     width: 120px;
@@ -1899,6 +1899,11 @@ body {
   .info-grid {
     gap: 10px;
   } */
+  .info-icon {
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+  }
   .privacy-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1940,7 +1945,7 @@ body {
 /* 375px */
 @media (max-width: 375px) {
   .hero-content {
-    padding: 20px 20px;
+    padding: 20px 10px;
   }
 
   .logo-placeholder img {
@@ -2159,7 +2164,7 @@ body {
   }
 
   .submit-button {
-    margin-left: 12rem; /* align with input fields */
+    margin-left: 12rem;
   }
 }
 
@@ -2206,7 +2211,7 @@ body {
   .submit-button {
     padding: 10px 25px;
     font-size: 14px;
-    margin-left: 6rem;
+    margin: 0 auto;
   }
   .contact-info-section {
     padding: 40px 20px;
@@ -2219,13 +2224,15 @@ body {
     gap: 10px;
   }
   .contact-hero .hero-placeholder img {
-    padding-top: 80px;
+    margin-top: 80px;
+    height: 300px;
+  }
+  .form-input,
+  .form-textarea {
+    width: 100%;
   }
 }
 @media (max-width: 375px) {
-  .submit-button {
-    margin-left: 4.7rem;
-  }
   .contact-icon {
     font-size: 18px;
   }
