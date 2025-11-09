@@ -1676,7 +1676,7 @@ body {
 /* at 425px */
 @media (max-width: 425px) {
   .hero-content {
-    padding: 20px 10px;
+    padding: 20px 14px;
   }
   .logo-placeholder img {
     width: 120px;
@@ -1930,7 +1930,7 @@ body {
 /* 375px */
 @media (max-width: 375px) {
   .hero-content {
-    padding: 20px 10px;
+    padding: 20px 14px;
   }
 
   .logo-placeholder img {
