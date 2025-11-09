@@ -50,7 +50,13 @@ const ContactPageComplete = () => {
               </p>
               <div className="contact-detail">
                 <span className="contact-icon">📞</span>
-                <span>07426119821</span>
+                <span>
+                  <p>
+                    <a href="tel:07426119821" className="contact-tel">
+                      07426119821
+                    </a>
+                  </p>
+                </span>
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">✉️</span>
