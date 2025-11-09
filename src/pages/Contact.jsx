@@ -60,7 +60,14 @@ const ContactPageComplete = () => {
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">✉️</span>
-                <span>info@excelkiddzchildminding.co.uk</span>
+                <span>
+                  <a
+                    href="mailto:info@excelkiddzchildminding.co.uk"
+                    className="contact-email"
+                  >
+                    info@excelkiddzchildminding.co.uk
+                  </a>
+                </span>
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">📍</span>

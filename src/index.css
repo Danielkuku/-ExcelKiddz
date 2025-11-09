@@ -1401,6 +1401,11 @@ body {
 .contact-tel:hover {
   color: #8b5cf6;
 }
+.contact-email {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: 600;
+}
 
 @media (max-width: 1024px) {
   /* .form-container {
