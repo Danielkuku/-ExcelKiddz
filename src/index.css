@@ -2218,6 +2218,9 @@ body {
   .info-grid {
     gap: 10px;
   }
+  .contact-hero .hero-placeholder img {
+    padding-top: 80px;
+  }
 }
 @media (max-width: 375px) {
   .submit-button {
