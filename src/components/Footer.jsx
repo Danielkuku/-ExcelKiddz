@@ -35,7 +35,7 @@ function Footer() {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.instagram.com/abosede_ade?igsh=YjM1enR5NTBpNnpu"
+              href="https://www.instagram.com/excelkiddzchildminding?igsh=b291cmEzdXR6ZXpi"
               className="footer-sociall socail-instagram"
               target="_blank"
               rel="noopener noreferrer"
