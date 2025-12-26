@@ -877,7 +877,12 @@ body {
   background: #2d1b4e;
   padding: 60px 80px 30px;
 }
-
+.form-success {
+  color: #2d1b4e;
+}
+.footer-brand .socail-instagram {
+  margin-left: 10px;
+}
 .footer-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -1,4 +1,4 @@
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Footer() {
@@ -25,14 +25,24 @@ function Footer() {
             <img src="/icon_logo.png" alt="" />
           </div>
           <p className="footer-tagline">Learn | Share | Grow</p>
-          <a
-            href="https://web.facebook.com/Damilolar00?_rdc=1&_rdr#"
-            className="footer-sociall"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebookF />
-          </a>
+          <div className="socail-space">
+            <a
+              href="https://web.facebook.com/Damilolar00?_rdc=1&_rdr#"
+              className="footer-sociall"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com/abosede_ade?igsh=YjM1enR5NTBpNnpu"
+              className="footer-sociall socail-instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+          </div>
         </div>
 
         <div className="footer-column">

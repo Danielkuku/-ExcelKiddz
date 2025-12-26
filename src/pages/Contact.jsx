@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Footer from "../components/Footer";
 
 const ContactPageComplete = () => {
   const [contactInfoVisible, setContactInfoVisible] = useState(false);
   const contactInfoRef = useRef(null);
+
+  const [state, handleSubmit] = useForm("xregbbwb");
 
   useEffect(() => {
     const observerOptions = {
@@ -29,13 +32,13 @@ const ContactPageComplete = () => {
   function Contact() {
     return (
       <div>
+        {/* Hero */}
         <section className="contact-hero">
           <div className="hero-placeholder">
             <span>
               <img src="/lol.jpg" alt="Contact banner" loading="lazy" />
             </span>
           </div>
-          {/* <h1 className="contact-title">Contact</h1> */}
         </section>
 
         {/* Contact Form Section */}
@@ -48,27 +51,24 @@ const ContactPageComplete = () => {
                 Please contact us, we will answer your query within one business
                 day,
               </p>
+
               <div className="contact-detail">
                 <span className="contact-icon">📞</span>
-                <span>
-                  <p>
-                    <a href="tel:07426119821" className="contact-tel">
-                      07426119821
-                    </a>
-                  </p>
-                </span>
+                <a href="tel:07426119821" className="contact-tel">
+                  07426119821
+                </a>
               </div>
+
               <div className="contact-detail">
                 <span className="contact-icon">✉️</span>
-                <span>
-                  <a
-                    href="mailto:info@excelkiddzchildminding.com"
-                    className="contact-email"
-                  >
-                    excelkiddzchildminding.com
-                  </a>
-                </span>
+                <a
+                  href="mailto:info@excelkiddzchildminding.com"
+                  className="contact-email"
+                >
+                  info@excelkiddzchildminding.com
+                </a>
               </div>
+
               <div className="contact-detail">
                 <span className="contact-icon">📍</span>
                 <span>
@@ -76,21 +76,70 @@ const ContactPageComplete = () => {
                 </span>
               </div>
             </div>
-            <div className="form-right">
+
+            {/* ✅ FORM (UNCHANGED STRUCTURE & STYLES) */}
+            <form onSubmit={handleSubmit} className="form-right">
+              {/* ✅ SUCCESS MESSAGE */}
+              {state.succeeded && (
+                <div className="form-success">
+                  <strong>Success!</strong> Your message has been sent. We’ll
+                  get back to you shortly.
+                </div>
+              )}
+
               <div className="form-group">
                 <label className="form-label">Your Name</label>
-                <input type="text" className="form-input" />
+                <input
+                  type="text"
+                  name="name"
+                  className="form-input"
+                  required
+                />
               </div>
+
               <div className="form-group">
                 <label className="form-label">Your Email</label>
-                <input type="email" className="form-input" />
+                <input
+                  type="email"
+                  name="email"
+                  className="form-input"
+                  required
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
               </div>
+
               <div className="form-group">
-                <label className="form-label">Your Message </label>
-                <textarea className="form-textarea"></textarea>
+                <label className="form-label">Your Message</label>
+                <textarea
+                  name="message"
+                  className="form-textarea"
+                  required
+                ></textarea>
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
               </div>
-              <button className="submit-button">Submit</button>
-            </div>
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Contact Form Message"
+              />
+
+              <button
+                type="submit"
+                className="submit-button"
+                disabled={state.submitting}
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </section>
 
@@ -103,6 +152,7 @@ const ContactPageComplete = () => {
         >
           <p className="info-label">HOW TO REACH US</p>
           <h2 className="info-heading">Contact Information</h2>
+
           <div className="info-grid">
             <div className="info-card">
               <div className="info-icon">🕐</div>
@@ -110,15 +160,15 @@ const ContactPageComplete = () => {
               <p>Monday - Friday</p>
               <p>7:30AM - 18:00PM</p>
             </div>
+
             <div className="info-card">
               <div className="info-icon">📞</div>
               <h3>Office Phone Number</h3>
-              <p>
-                <a href="tel:07426119821" className="contact-tel">
-                  07426119821
-                </a>
-              </p>
+              <a href="tel:07426119821" className="contact-tel">
+                07426119821
+              </a>
             </div>
+
             <div className="info-card">
               <div className="info-icon">📍</div>
               <h3>Office Location</h3>
@@ -131,13 +181,11 @@ const ContactPageComplete = () => {
           </div>
         </section>
 
-        {/* Footer Section */}
         <Footer />
       </div>
     );
   }
 
-  // ✅ This line fixes it:
   return <Contact />;
 };
 
