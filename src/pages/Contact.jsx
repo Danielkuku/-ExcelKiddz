@@ -62,10 +62,10 @@ const ContactPageComplete = () => {
                 <span className="contact-icon">✉️</span>
                 <span>
                   <a
-                    href="mailto:info@excelkiddzchildminding.co.uk"
+                    href="mailto:info@excelkiddzchildminding.com"
                     className="contact-email"
                   >
-                    info@excelkiddzchildminding.co.uk
+                    excelkiddzchildminding.com
                   </a>
                 </span>
               </div>

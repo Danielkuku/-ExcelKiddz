@@ -567,9 +567,8 @@ const PrivacyPolicyPage = () => {
               You may contact <strong>Excel Kiddz Childminding</strong> by email
               at
               <em>
-                <strong> info@excelkiddzchildminding.co.uk</strong>
+                <strong> info@excelkiddzchildminding.com</strong>
               </em>
-              .
             </p>
           </div>
         </div>
