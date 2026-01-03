@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+/*  */
+
+.upload-header {
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+.upload-header h2 {
+  color: purple;
+}
+.upload-header p {
+  color: #ff1493;
+}
+
+.upload-header button {
+  margin-top: 10px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  /* CTA gradient */
+  background: linear-gradient(135deg, #8b5cf6 0%, #ff1493 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.media-card {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  height: 180px; /* 👈 SAME HEIGHT FOR ALL */
+  object-fit: contain; /* ✅ shows full image/video */
+  background: #f3f4f6;
+  border-radius: 6px;
+}
+
+.delete-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  /* CTA danger variant */
+  background: linear-gradient(135deg, #ff4d4f 0%, #c0392b 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  /* CTA default */
+  background: linear-gradient(135deg, #8b5cf6 0%, #ff1493 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.modal-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+.modal-actions button:last-child {
+  background: linear-gradient(135deg, #ff4d4f 0%, #c0392b 100%);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.gallery-page,
+.upload-page {
+  padding-top: 150px; /* navbar space */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  max-width: 1200px; /* 👈 prevents ugly wide layout */
+  margin: 0 auto; /* centers content */
+  box-sizing: border-box;
+}
+
+/* Selected file names */
+.file-names {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Upload button disabled */
+.upload-header button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+.upload-header button:disabled {
+  background: #d1d5db;
+  color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: #2d7ef7;
+  transition: width 0.3s ease;
+}
+
+.gallery-header {
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.gallery-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ff1493;
+  margin-bottom: 10px;
+}
+
+.gallery-header p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: purple; /* soft gray */
+}
+
+@media (max-width: 900px) {
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .gallery-header h1 {
+    font-size: 24px;
+  }
+
+  .gallery-header p {
+    font-size: 15px;
+  }
+}
