@@ -75,10 +75,20 @@ export default function UploadPage() {
 
   const handleDelete = async (item) => {
     try {
-      await deleteDoc(doc(db, "media", item.id));
+      await fetch("/.netlify/functions/deleteMedia", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          publicId: item.publicId, // ✅ correct
+          docId: item.id, // ✅ correct
+        }),
+      });
+
       setConfirmDelete(null);
     } catch (err) {
-      console.error("Failed to delete from Firestore:", err);
+      console.error("Failed to delete media:", err);
     }
   };
 
