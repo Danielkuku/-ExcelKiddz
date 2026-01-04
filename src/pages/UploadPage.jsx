@@ -8,11 +8,11 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { doc, deleteDoc } from "firebase/firestore";
 
 export default function UploadPage() {
   const [media, setMedia] = useState([]);
   const [confirmDelete, setConfirmDelete] = useState(null);
+  const [deleting, setDeleting] = useState(false);
 
   // 🔥 REAL-TIME LISTENER (UPLOAD PAGE)
   useEffect(() => {
@@ -29,6 +29,7 @@ export default function UploadPage() {
     return () => unsubscribe();
   }, []);
 
+  // 🔥 CLOUDINARY UPLOAD
   const openCloudinaryWidget = () => {
     if (!window.cloudinary) {
       alert("Cloudinary not loaded");
@@ -54,7 +55,6 @@ export default function UploadPage() {
           return;
         }
 
-        // ✅ SAVE TO FIRESTORE (SOURCE OF TRUTH)
         if (result && result.event === "success") {
           const info = result.info;
 
@@ -62,33 +62,48 @@ export default function UploadPage() {
             await addDoc(collection(db, "media"), {
               url: info.secure_url,
               type: info.resource_type === "video" ? "video" : "image",
-              publicId: info.public_id,
+              publicId: info.public_id, // ✅ CORRECT publicId
               createdAt: serverTimestamp(),
             });
           } catch (err) {
-            console.error("Failed to save media to Firestore:", err);
+            console.error("Failed to save media:", err);
           }
         }
       }
     );
   };
 
+  // 🔥 DELETE (CLOUDINARY → FIRESTORE)
   const handleDelete = async (item) => {
+    if (deleting) return;
+
+    setDeleting(true);
+
     try {
-      await fetch("/.netlify/functions/deleteMedia", {
+      const res = await fetch("/.netlify/functions/deleteMedia", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          publicId: item.publicId, // ✅ correct
-          docId: item.id, // ✅ correct
+          publicId: item.publicId,
+          docId: item.id,
         }),
       });
 
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Delete failed");
+      }
+
+      // ✅ SUCCESS (Firestore + UI auto-update via snapshot)
       setConfirmDelete(null);
     } catch (err) {
-      console.error("Failed to delete media:", err);
+      console.error("Delete failed:", err);
+      alert("Failed to delete media. Please try again.");
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -120,6 +135,7 @@ export default function UploadPage() {
         ))}
       </div>
 
+      {/* 🔥 CONFIRM DELETE MODAL */}
       {confirmDelete && (
         <div className="modal">
           <div className="modal-box">
@@ -128,9 +144,10 @@ export default function UploadPage() {
               <button onClick={() => setConfirmDelete(null)}>Cancel</button>
               <button
                 className="danger"
+                disabled={deleting}
                 onClick={() => handleDelete(confirmDelete)}
               >
-                Delete
+                {deleting ? "Deleting..." : "Delete"}
               </button>
             </div>
           </div>
