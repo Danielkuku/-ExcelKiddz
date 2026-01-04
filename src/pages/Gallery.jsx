@@ -22,30 +22,31 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div className="gallery-page">
-      <div className="gallery-header">
-        <h1>Growing, Learning, and Creating Memories</h1>
-        <p>
-          Every picture and video here tells a story of learning, care, and
-          development. This gallery highlights the experiences that shape kids
-          and reflects our commitment to providing a supportive and engaging
-          environment.
-        </p>
-      </div>
+    <>
+      <div className="gallery-page">
+        <div className="gallery-header">
+          <h1>Growing, Learning, and Creating Memories</h1>
+          <p>
+            Every picture and video here tells a story of learning, care, and
+            development. This gallery highlights the experiences that shape kids
+            and reflects our commitment to providing a supportive and engaging
+            environment.
+          </p>
+        </div>
 
-      <div className="media-grid">
-        {media.map((item) => (
-          <div key={item.id} className="media-card">
-            {item.type === "image" ? (
-              <img src={item.url} alt="" />
-            ) : (
-              <video src={item.url} controls />
-            )}
-          </div>
-        ))}
+        <div className="media-grid">
+          {media.map((item) => (
+            <div key={item.id} className="media-card">
+              {item.type === "image" ? (
+                <img src={item.url} alt="" />
+              ) : (
+                <video src={item.url} controls />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-
       <Footer />
-    </div>
+    </>
   );
 }
