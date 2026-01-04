@@ -6,6 +6,8 @@ import {
   query,
   addDoc,
   serverTimestamp,
+  doc,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -73,37 +75,13 @@ export default function UploadPage() {
     );
   };
 
-  // 🔥 DELETE (CLOUDINARY → FIRESTORE)
   const handleDelete = async (item) => {
-    if (deleting) return;
-
-    setDeleting(true);
-
     try {
-      const res = await fetch("/.netlify/functions/deleteMedia", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          publicId: item.publicId,
-          docId: item.id,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Delete failed");
-      }
-
-      // ✅ SUCCESS (Firestore + UI auto-update via snapshot)
+      await deleteDoc(doc(db, "media", item.id));
       setConfirmDelete(null);
     } catch (err) {
       console.error("Delete failed:", err);
-      alert("Failed to delete media. Please try again.");
-    } finally {
-      setDeleting(false);
+      alert("Delete failed");
     }
   };
 
