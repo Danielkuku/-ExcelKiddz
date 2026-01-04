@@ -17,7 +17,10 @@ cloudinary.config({
 
 exports.handler = async (event) => {
   try {
-    const { publicId, docId } = JSON.parse(event.body);
+    let { publicId, docId } = JSON.parse(event.body);
+
+    // 🔥 SAFETY: remove file extension if present
+    publicId = publicId.replace(/\.[^/.]+$/, "");
 
     if (!publicId || !docId) {
       return {
