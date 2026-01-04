@@ -1,7 +1,6 @@
 const cloudinary = require("cloudinary").v2;
 const admin = require("firebase-admin");
 
-// Initialize Firebase Admin
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.applicationDefault(),
@@ -10,7 +9,6 @@ if (!admin.apps.length) {
 
 const db = admin.firestore();
 
-// Configure Cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -28,22 +26,29 @@ exports.handler = async (event) => {
       };
     }
 
-    // 🔥 DELETE FROM CLOUDINARY (IMAGE FIRST, THEN VIDEO)
+    console.log("DELETE REQUEST RECEIVED");
+    console.log("Public ID received:", publicId);
+
     let result = await cloudinary.uploader.destroy(publicId, {
       resource_type: "image",
     });
+
+    console.log("Image delete result:", result);
 
     if (result.result === "not found") {
       result = await cloudinary.uploader.destroy(publicId, {
         resource_type: "video",
       });
+      console.log("Video delete result:", result);
     }
 
     if (result.result !== "ok") {
+      console.error("Cloudinary delete FAILED");
       throw new Error("Cloudinary delete failed");
     }
 
-    // 🔥 DELETE FROM FIRESTORE
+    console.log("Cloudinary delete SUCCESS");
+
     await db.collection("media").doc(docId).delete();
 
     return {

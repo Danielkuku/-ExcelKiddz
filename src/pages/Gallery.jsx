@@ -27,9 +27,9 @@ export default function Gallery() {
         <h1>Growing, Learning, and Creating Memories</h1>
         <p>
           Every picture and video here tells a story of learning, care, and
-          development. This gallery highlights the experiences that shape our
-          students and reflects our commitment to providing a supportive and
-          engaging environment.
+          development. This gallery highlights the experiences that shape kids
+          and reflects our commitment to providing a supportive and engaging
+          environment.
         </p>
       </div>
 
