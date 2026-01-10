@@ -89,7 +89,7 @@ export default function UploadPage() {
     <div className="upload-page">
       <div className="upload-header">
         <h2>Welcome, Upload Pictures & Videos</h2>
-        <p>Uploaded media will appear on the website automatically</p>
+        <p>Uploaded media will appear on the website automatically.</p>
 
         <button onClick={openCloudinaryWidget}>Upload Media</button>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import {
   FaTree,
@@ -149,6 +149,9 @@ const Home = () => {
               <div>
                 <img src="/ofsted.webp" alt="" />
               </div>
+              <Link to="/gallery" className="cta-button-gallery">
+                See Media
+              </Link>
             </div>
           </div>
           <div className="about-image">
