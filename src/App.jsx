@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import UploadPage from "./pages/UploadPage";
 import Gallery from "./pages/Gallery";
+import ScrollToTop from "./components/ScrollToTop"; // ✅ added
 
 function App() {
   const [media, setMedia] = useState([]);
@@ -25,6 +26,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop /> {/* ✅ added */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
